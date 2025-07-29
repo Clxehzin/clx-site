@@ -4,12 +4,11 @@ async function getUserCountry() {
   return data.country_name;
 }
 
-// 🎮 Função para mostrar jogos populares
+// 🎮 Mostra jogos populares conforme o país
 async function showPopularGames() {
   const country = await getUserCountry();
   const gamesDiv = document.getElementById("games-list");
 
-  // Simulação de lista de jogos por país
   const gamesByCountry = {
     "Brasil": ["Free Fire", "League of Legends", "GTA V"],
     "Estados Unidos": ["Call of Duty", "Fortnite", "Minecraft"],
@@ -27,7 +26,7 @@ showPopularGames();
 
 // 🧠 Setups recomendados por jogo
 const setups = {
- { valorant: {
+  valorant: {
     minimo: "CPU: i3-4150, GPU: GT 730, RAM: 4GB",
     recomendado: "CPU: i5-9400F, GPU: GTX 1050 Ti, RAM: 8GB"
   },
@@ -38,34 +37,33 @@ const setups = {
   fortnite: {
     minimo: "CPU: i3-3225, GPU: Intel HD 4000, RAM: 4GB",
     recomendado: "CPU: i5-11400, GPU: GTX 1650, RAM: 8GB"
+  },
+  "rocket league": {
+    minimo: "CPU: Dual Core de 2.5 GHz, 4 GB de RAM, GPU NVIDIA GeForce 760 ou AMD Radeon R7 270X",
+    recomendado: "CPU: Quad Core de 3.0 GHz, 8 GB de RAM, GPU NVIDIA GeForce GTX 1060 ou AMD Radeon RX 470"
+  },
+  "league of legends": {
+    minimo: "CPU: Intel Core i3-530, 2 GB de RAM, GPU compatível com DirectX 10",
+    recomendado: "CPU: Intel Core i5-3300 ou equivalente, 4 GB de RAM, GPU GeForce 560 ou equivalente"
+  },
+  fc: {
+    minimo: "CPU: Intel Core i5-6600K ou AMD Ryzen 5 1600, 8GB de RAM, GPU GTX 1050 Ti ou RX 570",
+    recomendado: "CPU: i7-6700 ou Ryzen 7 2700X, 12GB de RAM, GPU GTX 1660 ou RX 5600 XT"
+  },
+  "gta v": {
+    minimo: "CPU: Intel Core 2 Quad Q6600 ou AMD Phenom 9850, 4 GB de RAM, GPU NVIDIA 9800 GT ou AMD HD 4870",
+    recomendado: "CPU: Intel Core i5 3470 ou AMD FX-8350, 8 GB de RAM, GPU GTX 660 ou HD 7870"
   }
-  rocket league: {
-    minimo: "CPU: Dual Core de 2.5 GHz, 4 GB de RAM e uma placa de vídeo NVIDIA GeForce 760 ou AMD Radeon R7 270X",
-    recomendado: "CPU: Quad Core de 3.0 GHz, 8 GB de RAM e uma placa de vídeo NVIDIA GeForce GTX 1060 ou AMD Radeon RX 470"
-  }
-  league of legends: {
-    minimo: "CPU: Processador Intel Core i3-530, 2 GB de RAM, placa de vídeo compatível com DirectX 10 e 16 GB ",
-    recomendado: "CPU:Intel Core i5-3300 ou equivalente, 4 GB de RAM, placa de vídeo GeForce 560 ou equivalente (com 1 GB de VRAM) e 16 GB de espaço em SSD.  "
-  }
-  FC: {
-    minimo: "CPU: processador Intel Core i5-6600K ou AMD Ryzen 5 1600, 8GB de RAM e uma placa de vídeo NVIDIA GTX 1050 Ti ou AMD Radeon RX 570",
-    recomendado: "CPU: i7-6700 ou AMD Ryzen 7 2700X, 12GB de RAM e uma placa de vídeo NVIDIA GTX 1660 ou AMD RX 5600 XT"
-  }
-  GTA V: {
-    minimo: "CPU: Intel Core 2 Quad Q6600 ou AMD Phenom 9850, 4 GB de RAM placa de vídeo NVIDIA 9800 GT ou AMD HD 4870, e 65 GB de espaço livre no disco",
-    recomendado: "CPU: Intel Core i5 3470 ou AMD X8 FX-8350, 8 GB de RAM, placa de vídeo NVIDIA GTX 660 ou AMD HD 7870, e 65 GB de espaço livre"
-  }s
-  }
-}
+};
 
-// 💻 Atualiza o setup ideal quando o jogo é escolhido
+// 💻 Atualiza o setup ideal ao selecionar jogo
 document.getElementById("game-select").addEventListener("change", (e) => {
-  const game = e.target.value;
+  const game = e.target.value.toLowerCase();
   const info = setups[game];
   const div = document.getElementById("setup-info");
 
   if (!info) {
-    div.innerHTML = "";
+    div.innerHTML = "<p>Informações não disponíveis para este jogo.</p>";
     return;
   }
 

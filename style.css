@@ -1,16 +1,26 @@
 body {
-  font-family: sans-serif;
-  background-color: #111;
-  color: #fff;
   margin: 0;
   padding: 20px;
+  font-family: Arial, sans-serif;
+  background-color: #111;
+  color: #fff;
 }
 
+/* Cabeçalho */
 header {
   text-align: center;
   margin-bottom: 30px;
 }
 
+#logo {
+  font-size: 48px;
+  font-weight: bold;
+  color: #a020f0; /* Roxo */
+  text-align: center;
+  letter-spacing: 5px;
+}
+
+/* Seções */
 section {
   margin-bottom: 40px;
   background-color: #222;
@@ -18,19 +28,32 @@ section {
   border-radius: 10px;
 }
 
+/* Títulos */
 h1, h2 {
   color: #00ff99;
 }
 
+/* Lista de jogos */
+ul {
+  padding-left: 20px;
+}
+
+/* Select de jogos */
 select {
   margin-top: 10px;
   padding: 8px;
   font-size: 16px;
+  background-color: #333;
+  color: #fff;
+  border: 1px solid #555;
+  border-radius: 5px;
 }
-#logo {
-  font-size: 48px;
-  font-weight: bold;
-  color: #a020f0; /* Roxo */
-  text-align: center;
-  letter-spacing: 5px;
+
+/* Informações do setup */
+#setup-info {
+  margin-top: 20px;
+  background-color: #1a1a1a;
+  padding: 15px;
+  border-radius: 8px;
+  border-left: 4px solid #00ff99;
 }
