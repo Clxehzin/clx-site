@@ -136,4 +136,3 @@ window.addEventListener("DOMContentLoaded", async () => {
   document.getElementById("lang-select").value = defaultLang;
   await updateLanguage(defaultLang);
 });
-
