@@ -135,40 +135,5 @@ shockwaves {
     opacity: 0;
   }
 }
-#top-bar {
-  background: #222;
-  color: #fff;
-  padding: 10px 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  border-radius: 0 0 8px 8px;
-  margin-bottom: 20px;
-}
 
-#top-bar select {
-  padding: 6px 10px;
-  font-size: 14px;
-  border-radius: 5px;
-  background: #333;
-  color: #fff;
-  border: none;
-  cursor: pointer;
-}
-
-#top-bar select:focus {
-  outline: none;
-  box-shadow: 0 0 5px #00ff99;
-}
-
-#top-bar .contact a {
-  color: #00ff99;
-  text-decoration: none;
-  font-weight: bold;
-  font-size: 14px;
-}
-
-#top-bar .contact a:hover {
-  text-decoration: underline;
-}
+ 
