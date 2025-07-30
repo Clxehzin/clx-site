@@ -1,20 +1,36 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <link rel="manifest" href="manifest.json">
-<meta name="theme-color" content="#00ff99">
-
-<!-- Ícone padrão (fallback para navegadores) -->
-<link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
-
-<!-- iOS Support -->
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CLX</title>
   
+  <link rel="manifest" href="manifest.json" />
+  <meta name="theme-color" content="#00ff99" />
+  
+  <!-- Ícone padrão -->
+  <link rel="icon" type="image/png" sizes="192x192" href="icon-192.png" />
+  
+  <!-- iOS Support -->
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+
   <!-- CSS externo -->
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <!-- Barra fixa no topo -->
+  <div id="top-bar">
+    <select id="language-select" aria-label="Alterar idioma">
+      <option value="pt-BR">Português (BR)</option>
+      <option value="en-US">English (US)</option>
+      <!-- Mais idiomas se quiser -->
+    </select>
+    <a id="contact-btn" href="https://wa.me/5541985108901" target="_blank" rel="noopener noreferrer" aria-label="Fale conosco via WhatsApp">
+      Fale Conosco
+    </a>
+  </div>
+
   <header>
     <h1 id="logo">CLX</h1>
   </header>
@@ -52,13 +68,11 @@
   <!-- JavaScript externo -->
   <script src="script.js"></script>
   <script>
-  if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('./service-worker.js')
-      .then(() => console.log("✅ Service Worker registrado com sucesso!"))
-      .catch(error => console.log("❌ Erro ao registrar Service Worker:", error));
-  }
-</script>
-</body>
-<div class="shockwaves"></div>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('./service-worker.js')
+        .then(() => console.log("✅ Service Worker registrado com sucesso!"))
+        .catch(error => console.log("❌ Erro ao registrar Service Worker:", error));
+    }
+  </script>
 </body>
 </html>
